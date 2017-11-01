@@ -25,8 +25,8 @@ How to generate self-signed SSL ?
 openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout server.key -out server.crt
 ```
 
-How to import SSL to JVM trusted store (Jenkins REST API with SSL)?
+How to import SSL to JVM trusted store (to use Jenkins REST API or CLI with SSL)?
 
 ```
-keytool -import -trustcacerts -alias jenkins -file /etc/ssl/certs/jenkins/server.crt -keystore /usr/lib/jvm/<JAVA_VERSION>/jre/lib/security/cacerts
+keytool -import -noprompt -trustcacerts -alias jenkins -file /etc/ssl/certs/jenkins/server.crt -keystore /usr/lib/jvm/<JAVA_VERSION>/lib/security/cacerts -storepass changeit
 ```
